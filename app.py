@@ -14,7 +14,7 @@ with st.form("User Input"):
 
     with col:
         gender = st.radio("Gender",["Male","Female"])
-        senior_citizen = st.radio("SeniorCitizen",["Yes","No"])####
+        senior_citizen = st.radio("SeniorCitizen",["Yes","No"])##### model was trained on 1/0, not Yes/No
         partner = st.radio("Partner",["Yes","No"])
         dependents = st.radio("Dependents",["Yes","No"])
         phone_service = st.radio("Phone Service",["Yes","No"])
