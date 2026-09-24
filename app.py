@@ -50,7 +50,7 @@ with st.form("User Input"):
 if submitted:
     input_row = pd.DataFrame([{
         "gender": gender,
-        "SeniorCitizen": 1 if senior_citizen == "Yes" else 0,  # model was trained on 0/1, not Yes/No
+        "SeniorCitizen": 1 if senior_citizen == "Yes" else 0,  # model was trained on 1/0, not Yes/No
         "Partner": partner,
         "Dependents": dependents,
         "PhoneService": phone_service,
@@ -66,10 +66,10 @@ if submitted:
         "PaperlessBilling": paperless_billing,
         "PaymentMethod": payment_method,
         "tenure": tenure,
-        "MonthlyCharges": monthly_charges,
+        "MonthlyCharges": monthly_charges
     }])
 
-    saved = pkl.load(open("ChurnModel.pkl", "rb"))
+    saved = pkl.load(open("ChrunModel.pkl", "rb"))
     model = saved["Model"]
 
     proba = model.predict_proba(input_row)[0][1]
